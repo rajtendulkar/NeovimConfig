@@ -34,7 +34,7 @@ nvimtree.setup {
     width = "15%",
     side = "left",
     mappings = {
-      custom_only = true,
+      custom_only = false,
       list = {
        { key = { '<leftmouse>' }, cb = tree_cb("edit") },
        {key = "<S-h>", cb = ":call ResizeLeft(3)<CR>"},
