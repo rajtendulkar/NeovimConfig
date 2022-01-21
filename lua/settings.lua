@@ -31,7 +31,8 @@ opt.smartcase = true
 
 -- Enabling ruler and statusline.
 opt.ruler = true
-opt.laststatus = 2
+-- Always display status line.
+opt.laststatus = 1
 
 -- Setting time that Neovim wait after each keystroke.
 opt.ttimeoutlen = 20
@@ -41,7 +42,7 @@ opt.timeoutlen = 1000
 opt.completeopt = "menuone,noselect"
 
 -- Add cursorline and diasable it in terminal
-vim.cmd('autocmd WinEnter,BufEnter * if &ft is "toggleterm" | set nocursorline | else | set cursorline | endif')
+vim.cmd("autocmd WinEnter,BufEnter * if &ft is \"toggleterm\" | set nocursorline | else | set cursorline | endif")
 
 -- Set line number for help files.
 vim.cmd

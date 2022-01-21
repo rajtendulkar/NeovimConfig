@@ -1,7 +1,7 @@
 -- Function for make mapping easier.
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
+  if opts then options = vim.tbl_extend("force", options, opts) end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
@@ -14,10 +14,6 @@ vim.g.mapleader = ','
 
 -- Set cl for clearing highlights after searching word in file.
 map('n', '<leader>cl', ':noh<CR>')
-
--- Bufferline: Buffer switching.
--- map('n', '<C-Up>', ':BufferLineCyclePrev<CR>')
--- map('n', '<C-Down>', ':BufferLineCycleNext<CR>')
 
 -- BarBar: Buffer switching
 map('n', '<C-Up>', ':BufferPrevious<CR>', { noremap = false })
