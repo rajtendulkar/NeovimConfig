@@ -2,7 +2,7 @@ local tree ={}
 local g = vim.g
 
 -- Explicitly set the nvim tree width
-g.nvim_tree_width = 30
+g.nvim_tree_width = 27
 
 local tree_width = g.nvim_tree_width
 
