@@ -37,11 +37,11 @@ vim.g.enfocado_plugins = {
 
 require("onedark").setup  {
     -- Main options --
-    style = "darker", -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = "darker", -- Choose between "dark", "darker", "cool", "deep", "warm", "warmer" and "light"
     term_colors = true,
     -- Change code style ---
     -- Options are italic, bold, underline, none
-    -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+    -- You can configure multiple style with comma seperated, For e.g., keywords = "italic,bold"
     code_style = {
         comments = "italic",
         keywords = "none",
