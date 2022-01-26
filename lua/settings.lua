@@ -54,7 +54,7 @@ vim.cmd
 ]]
 
 -- Ignore these files in VIM
-opt.wildignore = {'*.a','*.o','*.bmp','*.gif','*.ico','*.jpg','*.png', '*~','*.swp','*.tmp'}
+opt.wildignore = {"*.a","*.o","*.bmp","*.gif","*.ico","*.jpg","*.png", "*~","*.swp","*.tmp"}
 
 -- Paste toggle mapped to F5
 opt.pastetoggle="<F5>"
@@ -78,7 +78,7 @@ vim.api.nvim_exec([[set gfw=DroidSansMono\ Nerd\ Font\ Complete:h11]], false)
 
 
 -- do not fold any text
-opt.foldenable = false 
+opt.foldenable = false
 
 --set autoindent               " auto-indenting
 --set wildmenu                 " visual autocomplete for command menu

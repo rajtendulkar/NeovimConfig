@@ -1,9 +1,9 @@
 local use = require("packer").use
 local user_settings_file = require("../user_settings")
 
-return require('packer').startup(function()
+return require("packer").startup(function()
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
 
     -- Color schemes.
     use { "folke/tokyonight.nvim" }
@@ -27,15 +27,15 @@ return require('packer').startup(function()
 
     -- This plugin show trailing whitespace.
     use {
-        'ntpeters/vim-better-whitespace',
+        "ntpeters/vim-better-whitespace",
         cmd = {
-            'EnableWhitespace',
-            'DisableWhitespace',
-            'StripWhitespace',
-            'EnableStripWhitespaceOnSave'
+            "EnableWhitespace",
+            "DisableWhitespace",
+            "StripWhitespace",
+            "EnableStripWhitespaceOnSave"
         },
         setup = function()
-            require('plugins/better-whitespace')
+            require("plugins/better-whitespace")
         end
     }
 
@@ -51,8 +51,8 @@ return require('packer').startup(function()
 
     -- Bufferline on the top.
     use {
-        'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'},
+        "romgrk/barbar.nvim",
+        requires = {"kyazdani42/nvim-web-devicons"},
         config = function()
             require("plugins/barbar")
         end
@@ -90,7 +90,7 @@ return require('packer').startup(function()
 
     -- Fuzzy finder and it requirments.
     -- TODO: lazy load plenary, popup and telescope-media-files
-    use { 'nvim-lua/plenary.nvim' }
+    use { "nvim-lua/plenary.nvim" }
 
     use {
         "nvim-telescope/telescope-fzf-native.nvim", run = "make",
@@ -168,20 +168,20 @@ return require('packer').startup(function()
         end
     }
     use {
-        'L3MON4D3/LuaSnip',
-        after = 'nvim-cmp'
+        "L3MON4D3/LuaSnip",
+        after = "nvim-cmp"
     }
     use {
-        'saadparwaiz1/cmp_luasnip',
-        after = 'LuaSnip'
+        "saadparwaiz1/cmp_luasnip",
+        after = "LuaSnip"
     }
     use {
-        'hrsh7th/cmp-buffer',
-        after = 'cmp_luasnip'
+        "hrsh7th/cmp-buffer",
+        after = "cmp_luasnip"
     }
     use {
-        'hrsh7th/cmp-path',
-        after = 'cmp-buffer'
+        "hrsh7th/cmp-path",
+        after = "cmp-buffer"
     }
 
     -- Terminal.
@@ -213,10 +213,10 @@ return require('packer').startup(function()
 
     -- Auto closes.
     use {
-        'windwp/nvim-autopairs',
-        event = 'BufRead',
+        "windwp/nvim-autopairs",
+        event = "BufRead",
         config = function()
-            require('nvim-autopairs').setup{}
+            require("nvim-autopairs").setup{}
         end
     }
 
@@ -243,9 +243,9 @@ return require('packer').startup(function()
 
     -- Tagbar
     use {
-        'preservim/tagbar',
+        "preservim/tagbar",
         config = function()
-            require('plugins/tagbar')
+            require("plugins/tagbar")
         end
     }
 end)

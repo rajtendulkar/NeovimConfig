@@ -1,25 +1,25 @@
-local rq_get_hex = require('cokeline/utils').get_hex
-local rq_palette = require('colorscheme').palette
-local rq_mappings = require('cokeline/mappings')
+local rq_get_hex = require("cokeline/utils").get_hex
+local rq_palette = require("colorscheme").palette
+local rq_mappings = require("cokeline/mappings")
 
-local comments_fg = rq_get_hex('Comment', 'fg')
-local errors_fg = rq_get_hex('DiagnosticError', 'fg')
-local warnings_fg = rq_get_hex('DiagnosticWarn', 'fg')
+local comments_fg = rq_get_hex("Comment", "fg")
+local errors_fg = rq_get_hex("DiagnosticError", "fg")
+local warnings_fg = rq_get_hex("DiagnosticWarn", "fg")
 
 local components = {
   space = {
-    text = ' ',
+    text = " ",
     truncation = { priority = 1 }
   },
 
   two_spaces = {
-    text = '  ',
+    text = "  ",
     truncation = { priority = 1 },
   },
 
   separator = {
     text = function(buffer)
-      return buffer.index ~= 1 and '▏' or ''
+      return buffer.index ~= 1 and "▏" or ""
     end,
   },
 
@@ -27,7 +27,7 @@ local components = {
     text = function(buffer)
       return
         (rq_mappings.is_picking_focus() or rq_mappings.is_picking_close())
-          and buffer.pick_letter .. ' '
+          and buffer.pick_letter .. " "
            or buffer.devicon.icon
     end,
     hl = {
@@ -40,7 +40,7 @@ local components = {
       style = function(_)
         return
           (rq_mappings.is_picking_focus() or rq_mappings.is_picking_close())
-          and 'italic,bold'
+          and "italic,bold"
            or nil
       end,
     },
@@ -48,7 +48,7 @@ local components = {
 
   index = {
     text = function(buffer)
-      return buffer.index .. ': '
+      return buffer.index .. ": "
     end,
     hl = {
       fg = function(buffer)
@@ -66,11 +66,11 @@ local components = {
     end,
     hl = {
       fg = comments_fg,
-      style = 'italic',
+      style = "italic",
     },
     truncation = {
       priority = 7,
-      direction = 'left',
+      direction = "left",
     },
   },
 
@@ -88,24 +88,24 @@ local components = {
       style = function(buffer)
         return
           ((buffer.is_focused and buffer.diagnostics.errors ~= 0)
-            and 'bold,underline')
-          or (buffer.is_focused and 'bold')
-          or (buffer.diagnostics.errors ~= 0 and 'underline')
+            and "bold,underline")
+          or (buffer.is_focused and "bold")
+          or (buffer.diagnostics.errors ~= 0 and "underline")
           or nil
       end
     },
     truncation = {
       priority = 6,
-      direction = 'left',
+      direction = "left",
     },
   },
 
   diagnostics = {
     text = function(buffer)
       return
-        (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
-        or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
-        or ''
+        (buffer.diagnostics.errors ~= 0 and "  " .. buffer.diagnostics.errors)
+        or (buffer.diagnostics.warnings ~= 0 and "  " .. buffer.diagnostics.warnings)
+        or ""
     end,
     hl = {
       fg = function(buffer)
@@ -120,7 +120,7 @@ local components = {
 
   close_or_unsaved = {
     text = function(buffer)
-      return buffer.is_modified and '●' or ''
+      return buffer.is_modified and "●" or ""
     end,
     hl = {
       fg = function(buffer)
@@ -136,21 +136,21 @@ cokeline.setup{
   show_if_buffers_are_at_least = 2,
 
   buffers = {
-    -- filter_visible = function(buffer) return buffer.type ~= 'terminal' end,
-    new_buffers_position = 'next',
+    -- filter_visible = function(buffer) return buffer.type ~= "terminal" end,
+    new_buffers_position = "next",
   },
 
   rendering = {
     max_buffer_width = 30,
     left_sidebar = {
-      filetype = 'NvimTree',
+      filetype = "NvimTree",
       components = {
         {
-          text = '  NvimTree',
+          text = "  NvimTree",
           hl = {
             fg = rq_palette.normal.yellow,
-            bg = rq_get_hex('NvimTreeNormal', 'bg'),
-            style = 'bold'
+            bg = rq_get_hex("NvimTreeNormal", "bg"),
+            style = "bold"
           }
         },
       }
@@ -159,12 +159,12 @@ cokeline.setup{
 
   default_hl = {
     focused = {
-      fg = rq_get_hex('Normal', 'fg'),
-      bg = rq_get_hex('ColorColumn', 'bg'),
+      fg = rq_get_hex("Normal", "fg"),
+      bg = rq_get_hex("ColorColumn", "bg"),
     },
     unfocused = {
-      fg = rq_get_hex('Comment', 'fg'),
-      bg = rq_get_hex('ColorColumn', 'bg'),
+      fg = rq_get_hex("Comment", "fg"),
+      bg = rq_get_hex("ColorColumn", "bg"),
     },
   },
 
